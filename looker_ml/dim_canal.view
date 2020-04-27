@@ -1,0 +1,19 @@
+view: dim_canal {
+  sql_table_name: `HOTEL_MODEL.DIM_CANAL`
+    ;;
+
+  dimension: id_canal {
+    type: number
+    sql: ${TABLE}.ID_CANAL ;;
+  }
+
+  dimension: nombre_canal {
+    type: string
+    sql: ${TABLE}.NOMBRE_CANAL ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+}

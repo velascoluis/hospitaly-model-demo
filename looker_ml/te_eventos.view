@@ -1,0 +1,29 @@
+view: te_eventos {
+  sql_table_name: `HOTEL_MODEL.TE_EVENTOS`
+    ;;
+
+  dimension: asistentes {
+    type: number
+    sql: ${TABLE}.ASISTENTES ;;
+  }
+
+  dimension: id_evento {
+    type: number
+    sql: ${TABLE}.ID_EVENTO ;;
+  }
+
+  dimension: nombre {
+    type: string
+    sql: ${TABLE}.NOMBRE ;;
+  }
+
+  dimension: tipo_evento {
+    type: string
+    sql: ${TABLE}.TIPO_EVENTO ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+}

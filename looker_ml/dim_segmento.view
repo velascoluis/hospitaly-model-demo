@@ -1,0 +1,19 @@
+view: dim_segmento {
+  sql_table_name: `HOTEL_MODEL.DIM_SEGMENTO`
+    ;;
+
+  dimension: id_segmento {
+    type: number
+    sql: ${TABLE}.ID_SEGMENTO ;;
+  }
+
+  dimension: nombre_segmento {
+    type: string
+    sql: ${TABLE}.NOMBRE_SEGMENTO ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+}

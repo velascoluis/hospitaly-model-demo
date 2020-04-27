@@ -1,0 +1,34 @@
+view: dim_habitacion {
+  sql_table_name: `HOTEL_MODEL.DIM_HABITACION`
+    ;;
+
+  dimension: amenidades {
+    type: string
+    sql: ${TABLE}.AMENIDADES ;;
+  }
+
+  dimension: id_habitacion {
+    type: number
+    sql: ${TABLE}.ID_HABITACION ;;
+  }
+
+  dimension: id_hotel {
+    type: number
+    sql: ${TABLE}.ID_HOTEL ;;
+  }
+
+  dimension: numero_habitacion {
+    type: number
+    sql: ${TABLE}.NUMERO_HABITACION ;;
+  }
+
+  dimension: planta {
+    type: number
+    sql: ${TABLE}.PLANTA ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+}

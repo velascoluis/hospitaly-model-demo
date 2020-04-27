@@ -1,0 +1,89 @@
+view: th_reservas {
+  sql_table_name: `HOTEL_MODEL.TH_RESERVAS`
+    ;;
+
+  dimension_group: fecha_checkin {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.FECHA_CHECKIN ;;
+  }
+
+  dimension_group: fecha_checkout {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.FECHA_CHECKOUT ;;
+  }
+
+  dimension_group: fecha_reserva {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.FECHA_RESERVA ;;
+  }
+
+  dimension: id_canal {
+    type: number
+    sql: ${TABLE}.ID_CANAL ;;
+  }
+
+  dimension: id_cliente {
+    type: number
+    sql: ${TABLE}.ID_CLIENTE ;;
+  }
+
+  dimension: id_habitacion {
+    type: number
+    sql: ${TABLE}.ID_HABITACION ;;
+  }
+
+  dimension: id_meteo {
+    type: number
+    sql: ${TABLE}.ID_METEO ;;
+  }
+
+  dimension: id_reserva {
+    type: number
+    sql: ${TABLE}.ID_RESERVA ;;
+  }
+
+  dimension: tarifa_noche {
+    type: number
+    sql: ${TABLE}.TARIFA_NOCHE ;;
+  }
+
+  dimension: total_dias {
+    type: number
+    sql: ${TABLE}.TOTAL_DIAS ;;
+  }
+
+  measure: count {
+    type: average
+    drill_fields: [tarifa_noche]
+  }
+}

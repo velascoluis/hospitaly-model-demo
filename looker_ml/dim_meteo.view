@@ -1,0 +1,39 @@
+view: dim_meteo {
+  sql_table_name: `HOTEL_MODEL.DIM_METEO`
+    ;;
+
+  dimension_group: fecha_meteo {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}.FECHA_METEO ;;
+  }
+
+  dimension: id_meteo {
+    type: number
+    sql: ${TABLE}.ID_METEO ;;
+  }
+
+  dimension: lluvia {
+    type: number
+    sql: ${TABLE}.LLUVIA ;;
+  }
+
+  dimension: temp {
+    type: number
+    sql: ${TABLE}.TEMP ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+}

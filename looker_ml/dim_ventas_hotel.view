@@ -1,0 +1,29 @@
+view: dim_ventas_hotel {
+  sql_table_name: `HOTEL_MODEL.DIM_VENTAS_HOTEL`
+    ;;
+
+  dimension: cantidad {
+    type: number
+    sql: ${TABLE}.CANTIDAD ;;
+  }
+
+  dimension: id_producto {
+    type: number
+    sql: ${TABLE}.ID_PRODUCTO ;;
+  }
+
+  dimension: id_reserva {
+    type: number
+    sql: ${TABLE}.ID_RESERVA ;;
+  }
+
+  dimension: id_venta {
+    type: number
+    sql: ${TABLE}.ID_VENTA ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+}

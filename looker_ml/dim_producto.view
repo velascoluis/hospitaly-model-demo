@@ -1,0 +1,24 @@
+view: dim_producto {
+  sql_table_name: `HOTEL_MODEL.DIM_PRODUCTO`
+    ;;
+
+  dimension: id_producto {
+    type: number
+    sql: ${TABLE}.ID_PRODUCTO ;;
+  }
+
+  dimension: nombre_producto {
+    type: string
+    sql: ${TABLE}.NOMBRE_PRODUCTO ;;
+  }
+
+  dimension: precio_producto {
+    type: number
+    sql: ${TABLE}.PRECIO_PRODUCTO ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+}

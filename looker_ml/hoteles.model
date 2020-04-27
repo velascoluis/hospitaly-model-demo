@@ -1,0 +1,43 @@
+connection: "velascoluis-test"
+
+# include all the views
+include: "/views/**/*.view"
+
+datagroup: hoteles_default_datagroup {
+  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  max_cache_age: "1 hour"
+}
+
+persist_with: hoteles_default_datagroup
+
+explore: dim_canal {}
+
+explore: dim_cliente {}
+
+explore: dim_habitacion {}
+
+explore: dim_habitacion_array {}
+
+explore: dim_hotel {}
+
+explore: dim_hotel_dq {}
+
+explore: dim_meteo {}
+
+explore: dim_producto {}
+
+explore: dim_segmento {}
+
+explore: dim_ventas_hotel {}
+
+explore: n3_stats_segmento {}
+
+explore: n3_total_reservas_hotel_dia {}
+
+explore: te_eventos {}
+
+explore: th_reservas {
+  join: dim_meteo {
+    sql_on: ${dim_meteo.id_meteo} = ${th_reservas.id_meteo} ;;
+  }
+}

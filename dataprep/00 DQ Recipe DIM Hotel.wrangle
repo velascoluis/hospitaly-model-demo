@@ -1,0 +1,3 @@
+textformat col: NOMBRE_HOTEL type: uppercase
+textformat col: NOMBRE_HOTEL type: suffix text: ' HOTEL'
+extractpositions col: LOCALIZACION type: first count: 2

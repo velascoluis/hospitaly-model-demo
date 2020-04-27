@@ -1,0 +1,29 @@
+view: dim_cliente {
+  sql_table_name: `HOTEL_MODEL.DIM_CLIENTE`
+    ;;
+
+  dimension: email {
+    type: string
+    sql: ${TABLE}.EMAIL ;;
+  }
+
+  dimension: id_cliente {
+    type: number
+    sql: ${TABLE}.ID_CLIENTE ;;
+  }
+
+  dimension: id_segmento {
+    type: number
+    sql: ${TABLE}.ID_SEGMENTO ;;
+  }
+
+  dimension: nombre {
+    type: string
+    sql: ${TABLE}.NOMBRE ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+}

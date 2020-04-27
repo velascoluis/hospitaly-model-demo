@@ -1,0 +1,24 @@
+view: dim_hotel {
+  sql_table_name: `HOTEL_MODEL.DIM_HOTEL`
+    ;;
+
+  dimension: id_hotel {
+    type: number
+    sql: ${TABLE}.ID_HOTEL ;;
+  }
+
+  dimension: localizacion {
+    type: string
+    sql: ${TABLE}.LOCALIZACION ;;
+  }
+
+  dimension: nombre_hotel {
+    type: string
+    sql: ${TABLE}.NOMBRE_HOTEL ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+}
